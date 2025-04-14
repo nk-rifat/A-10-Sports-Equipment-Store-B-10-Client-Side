@@ -2,12 +2,12 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
     const links = <>
-        <li><NavLink>Home</NavLink></li>
-        <li><NavLink>AIl Sports Equipment</NavLink></li>
-        <li><NavLink>Add Equipment</NavLink></li>
-        <li><NavLink>My Equipment List</NavLink></li>
-        <li><NavLink>Login</NavLink></li>
-        <li><NavLink>Register</NavLink></li>
+        <li><NavLink to='/'>Home</NavLink></li>
+        <li><NavLink to='all-equipment'>AIl Sports Equipment</NavLink></li>
+        <li><NavLink to='add-equipment'>Add Equipment</NavLink></li>
+        <li><NavLink to='my-equipment'>My Equipment List</NavLink></li>
+        <li><NavLink to='login'>Login</NavLink></li>
+        <li><NavLink to='register'>Register</NavLink></li>
     </>
     return (
         <div className="navbar">
