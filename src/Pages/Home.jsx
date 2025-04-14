@@ -1,4 +1,5 @@
 import Navbar from "../Components/Navbar";
+import Banner from "./Banner";
 import Footer from "./Footer";
 
 const Home = () => {
@@ -10,7 +11,7 @@ const Home = () => {
                 </nav>
 
                 <section>
-
+                    <Banner></Banner>
                 </section>
             </header>
 
