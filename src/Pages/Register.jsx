@@ -1,7 +1,47 @@
 import { Link } from "react-router-dom";
 import Navbar from "../Components/Navbar";
+import { useContext, useState } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Register = () => {
+
+    const { setUser, registerUser, updateUserProfile } = useContext(AuthContext);
+    const [error, setError] = useState('');
+
+    const handleRegister = e => {
+        e.preventDefault();
+
+        const name = e.target.name.value;
+        const photo = e.target.photo.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+
+        if (!passwordRegex.test(password)) {
+            setError('password length should be 6 with one Uppercase and one Lowercase');
+            toast.error('Invalid password format!');
+            return;
+        }
+
+        registerUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                updateUserProfile({ displayName: name, photoURL: photo })
+                    .then(() => {
+                    })
+                toast.success('Registration successful!');
+                setUser(user);
+            })
+            .catch(error => {
+                const err = error.message;
+                setError(err);
+            });
+        e.target.reset();
+    }
+
     return (
         <div>
             <nav className="w-11/12 mx-auto">
@@ -10,7 +50,7 @@ const Register = () => {
             <div className="min-h-screen flex justify-center items-center">
                 <div className="card bg-base-100 w-full  max-w-sm shrink-0 shadow-2xl p-8">
                     <h2 className="text-2xl text-center mt-6 font-bold">Register your account</h2>
-                    <form className="card-body">
+                    <form onSubmit={handleRegister} className="card-body">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Name</span>
@@ -38,11 +78,15 @@ const Register = () => {
                             <input name="password" type="password" placeholder="password" className="input input-bordered" required />
                         </div>
 
+                        {
+                            error && <p className="text-red-500">{error}</p>
+                        }
+
                         <div className="form-control mt-6">
                             <button className="btn btn-outline btn-primary font-bold w-full">Register</button>
                         </div>
-                        <p className="text-center font-semibold mt-5">Already Have An Account ? <Link className="text-red-600 font-bold" to='/login'>Login</Link></p>
                     </form>
+                    <p className="text-center font-semibold">Already Have An Account ? <Link className="text-red-600 font-bold" to='/login'>Login</Link></p>
                 </div>
             </div>
         </div>
