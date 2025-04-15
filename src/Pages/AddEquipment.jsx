@@ -1,12 +1,15 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import Navbar from "../Components/Navbar";
+import Swal from "sweetalert2";
 
 const AddEquipment = () => {
 
     const { user } = useContext(AuthContext);
 
-    const handleAddEquipment = () => {
+    const handleAddEquipment = (event) => {
+        event.preventDefault();
+
         const form = event.target;
         const photo = form.photo.value;
         const item = form.item.value;
@@ -20,8 +23,32 @@ const AddEquipment = () => {
         const email = form.email.value;
         const name = form.name.value;
 
-        const newItem = {photo, item, category, price, rating, customization, description, time, stock, email, name};
+        const newItem = { photo, item, category, price, rating, customization, description, time, stock, email, name };
         console.log(newItem)
+
+
+        //send data to server 
+
+        fetch('http://localhost:5000/product', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newItem)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        icon: "Success!",
+                        text: "Coffee Added Successfully",
+                        confirmButtonText: 'Close'
+                    });
+                }
+                form.reset();
+            });
     }
     return (
         <div>

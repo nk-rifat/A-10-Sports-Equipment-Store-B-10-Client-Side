@@ -1,6 +1,8 @@
 import Navbar from "../Components/Navbar";
 import Banner from "./Banner";
 import Footer from "./Footer";
+import ProductSection from "./ProductSection";
+
 
 const Home = () => {
     return (
@@ -16,7 +18,7 @@ const Home = () => {
             </header>
 
             <main>
-
+                <ProductSection></ProductSection>
             </main>
 
             <footer>
