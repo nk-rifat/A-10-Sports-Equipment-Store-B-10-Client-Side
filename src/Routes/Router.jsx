@@ -6,6 +6,7 @@ import AddEquipment from "../Pages/AddEquipment";
 import MyEquipmentList from "../Pages/MyEquipmentList";
 import Login from '../Pages/Login';
 import Register from '../Pages/Register';
+import PrivateRoute from "./PrivateRoute";
 
 const Router = createBrowserRouter([
     {
@@ -19,11 +20,15 @@ const Router = createBrowserRouter([
     },
     {
         path: '/add-equipment',
-        element: <AddEquipment></AddEquipment>
+        element: <PrivateRoute>
+            <AddEquipment></AddEquipment>
+        </PrivateRoute>
     },
     {
         path: '/my-equipment',
-        element: <MyEquipmentList></MyEquipmentList>
+        element: <PrivateRoute>
+            <MyEquipmentList></MyEquipmentList>
+        </PrivateRoute>
     },
     {
         path: '/login',
@@ -34,7 +39,7 @@ const Router = createBrowserRouter([
         element: <Register></Register>
     }
 
-    
+
 
 
 ])
