@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 
 const AllEquipment = () => {
@@ -27,9 +27,11 @@ const AllEquipment = () => {
                                     <td className="text-center">{item.category}</td>
                                     <td className="text-center">{item.price}</td>
                                     <td className="text-center">
-                                        <button className="btn btn-outline btn-primary font-bold hover:scale-105 transition-transform duration-300">
-                                            View Details
-                                        </button>
+                                        <Link to={`/view-details/${item._id}`}>
+                                            <button className="btn btn-outline btn-primary font-bold hover:scale-105 transition-transform duration-300">
+                                                View Details
+                                            </button>
+                                        </Link>
                                     </td>
                                 </tr>
                             ))}

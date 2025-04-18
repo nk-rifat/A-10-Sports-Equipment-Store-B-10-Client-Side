@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const ProductSection = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/product')
+        fetch('http://localhost:5000/product/six')
             .then(res => res.json())
             .then(data => {
                 setItems(data);
@@ -14,7 +15,7 @@ const ProductSection = () => {
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-8 w-11/12 mx-auto">
             {
                 items.map(item => (
-                    <div className="card bg-base-100 shadow-xl">
+                    <div key={item._id} className="card bg-base-100 shadow-xl">
                         <figure>
                             <img
                                 src={item.photo}
@@ -26,7 +27,9 @@ const ProductSection = () => {
                             <h2 className="text-base font-medium text-gray-600"><span className="font-semibold text-black">Product Name:</span> {item.item}</h2>
                             <p className="text-base font-medium text-gray-600"> Price: {item.price} ($)</p>
                             <div className="card-actions justify-end">
-                                <button className="btn btn-md btn-primary">View Details</button>
+                                <Link to={`/view-details/${item._id}`}>
+                                    <button className="btn btn-md btn-primary">View Details</button>
+                                </Link>
                             </div>
                         </div>
                     </div>
