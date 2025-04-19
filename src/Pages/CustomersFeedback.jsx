@@ -40,7 +40,7 @@ const CustomersFeedback = () => {
         },
     ];
     return (
-        <section className="bg-gradient-to-br from-gray-100 to-white py-14 px-4">
+        <section className=" py-14 px-4">
             <div className="text-center mb-10">
                 <h2 className="text-3xl sm:text-4xl font-bold text-primary">Customer Feedback</h2>
                 <p className="text-gray-600 mt-2">Hear what our happy customers are saying!</p>
