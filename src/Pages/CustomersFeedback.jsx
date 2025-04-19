@@ -45,7 +45,7 @@ const CustomersFeedback = () => {
                 <h2 className="text-3xl sm:text-4xl font-bold text-primary">Customer Feedback</h2>
                 <p className="text-gray-600 mt-2">Hear what our happy customers are saying!</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto ">
                 {feedbacks.map((fb, index) => (
                     <div key={index} className="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition duration-300">
                         <div className="flex items-center gap-4 mb-4">
@@ -53,16 +53,14 @@ const CustomersFeedback = () => {
                             <div>
                                 <h4 className="text-lg font-semibold">{fb.name}</h4>
                                 <div className="flex gap-1 text-yellow-400">
-                                    <FaStar />
-                                    <FaStar />
-                                    <FaStar />
-                                    <FaStar />
-                                    <FaStar />
+                                    <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
                                 </div>
                             </div>
 
                         </div>
-                        <p className="text-gray-700">{fb.feedback}</p>
+                        <div className="bg-gray-100 p-3 rounded-2xl">
+                            <p className="text-gray-800">{fb.feedback}</p>
+                        </div>
                     </div>
                 ))}
             </div>
