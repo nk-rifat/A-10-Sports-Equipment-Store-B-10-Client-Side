@@ -16,11 +16,11 @@ const AllEquipment = () => {
     });
 
     return (
-        <div className="w-11/12 mx-auto">
+        <div>
             <nav>
                 <Navbar></Navbar>
             </nav>
-            <div className="p-6">
+            <div className="p-2 w-11/12 mx-auto">
                 <h2 className="text-3xl font-bold text-primary  tracking-tight">All Equipment</h2>
 
                 {/* Sort Button */}

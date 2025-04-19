@@ -52,7 +52,7 @@ const AddEquipment = () => {
     }
     return (
         <div>
-            <nav className="w-11/12 mx-auto">
+            <nav>
                 <Navbar></Navbar>
             </nav>
             <div className="max-w-5xl mx-auto p-10 bg-base-200 rounded-3xl shadow-xl">

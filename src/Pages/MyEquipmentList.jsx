@@ -51,7 +51,7 @@ const MyEquipmentList = () => {
 
     return (
         <div>
-            <nav className="w-11/12 mx-auto">
+            <nav>
                 <Navbar></Navbar>
             </nav>
 
