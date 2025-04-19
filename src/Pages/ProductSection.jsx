@@ -12,7 +12,7 @@ const ProductSection = () => {
             })
     }, [])
     return (
-        <div className="mt-5">
+        <div className="mt-20">
             <div className="text-center">
                 <h2 className="text-3xl sm:text-4xl font-bold text-primary">Our Products</h2>
                 <p className="text-gray-600 mt-2">
