@@ -15,7 +15,11 @@ const MyEquipmentList = () => {
         }
     }, [user, loadedItems]);
 
-    
+    const handleDeleteProduct = (id) => {
+        fetch(`http://localhost:5000/product/${id}`,{
+            method: 'DELETE'
+        })
+    };
 
     return (
         <div>
@@ -37,7 +41,7 @@ const MyEquipmentList = () => {
                                     <Link to={`/update-product/${item._id}`}>
                                         <button className="btn btn-primary btn-sm">Update</button>
                                     </Link>
-                                    <button  className="btn btn-error btn-sm">Delete</button>
+                                    <button onClick={() => handleDeleteProduct(item._id)} className="btn btn-error btn-sm">Delete</button>
                                 </div>
                             </div>
                         </div>
