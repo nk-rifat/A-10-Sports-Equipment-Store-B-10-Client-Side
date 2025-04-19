@@ -5,6 +5,7 @@ import ProductSection from "./ProductSection";
 
 
 const Home = () => {
+    
     return (
         <div>
             <header>

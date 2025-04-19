@@ -1,15 +1,38 @@
+import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 
 const AllEquipment = () => {
     const loadedProducts = useLoaderData();
+    const [sortOrder, setSortOrder] = useState('asc'); // Default sort order (ascending)
+
+    // Sort products based on price
+    const sortedProducts = [...loadedProducts].sort((a, b) => {
+        if (sortOrder === 'asc') {
+            return a.price - b.price;  // Sort ascending (low to high)
+        } else {
+            return b.price - a.price;  // Sort descending (high to low)
+        }
+    });
+
     return (
         <div className="w-11/12 mx-auto">
             <nav>
                 <Navbar></Navbar>
             </nav>
             <div className="p-6">
-                <h2 className="text-3xl font-bold text-primary mb-10 tracking-tight">All Equipment</h2>
+                <h2 className="text-3xl font-bold text-primary  tracking-tight">All Equipment</h2>
+
+                {/* Sort Button */}
+                <div className="flex justify-end mb-4">
+                    <button
+                        onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}
+                        className="btn btn-outline btn-primary"
+                    >
+                        Sort by Price: {sortOrder === 'asc' ? 'Low to High' : 'High to Low'}
+                    </button>
+                </div>
+
                 <div className="overflow-x-auto">
                     <table className="table w-full border border-gray-300">
                         <thead>
@@ -21,7 +44,7 @@ const AllEquipment = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {loadedProducts.map((product) => (
+                            {sortedProducts.map((product) => (
                                 <tr key={product._id}>
                                     <td className="text-center">{product.item}</td>
                                     <td className="text-center">{product.category}</td>

@@ -15,6 +15,7 @@ const Navbar = () => {
                 <li><NavLink to='/my-equipment'>My Equipment List</NavLink></li>
             </div>
         }
+        <li><NavLink to='/about-us'>About Us</NavLink></li>
         {
             !user &&
             <div className="flex">
@@ -22,7 +23,7 @@ const Navbar = () => {
                 <li><NavLink to='/register'>Register</NavLink></li>
             </div>
         }
-        <li><NavLink to='/about-us'>About Us</NavLink></li>
+
     </>
     return (
         <div className="navbar">
