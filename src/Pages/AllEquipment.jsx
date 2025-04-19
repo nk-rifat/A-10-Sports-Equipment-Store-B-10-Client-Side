@@ -16,7 +16,7 @@ const AllEquipment = () => {
     });
 
     return (
-        <div className="bg-gradient-to-br from-gray-100 to-white">
+        <div className="bg-gradient-to-br from-gray-100 to-white min-h-screen">
             <nav>
                 <Navbar></Navbar>
             </nav>
