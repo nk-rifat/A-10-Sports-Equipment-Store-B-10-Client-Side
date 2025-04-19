@@ -7,9 +7,8 @@ import MyEquipmentList from "../Pages/MyEquipmentList";
 import Login from '../Pages/Login';
 import Register from '../Pages/Register';
 import PrivateRoute from "./PrivateRoute";
-import ProductSection from "../Pages/ProductSection";
 import ViewDetails from "../Pages/ViewDetails";
-import UpdateUser from "../Pages/UpdateUser";
+import UpdateProduct from "../Pages/UpdateProduct";
 
 const Router = createBrowserRouter([
     {
@@ -43,9 +42,9 @@ const Router = createBrowserRouter([
         loader: () => fetch('http://localhost:5000/product')
     },
     {
-        path: '/update-user/:id',
+        path: '/update-product/:id',
         element: <PrivateRoute>
-            <UpdateUser></UpdateUser>
+            <UpdateProduct></UpdateProduct>
         </PrivateRoute>,
         loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
     },

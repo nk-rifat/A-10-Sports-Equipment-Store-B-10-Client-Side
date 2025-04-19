@@ -15,6 +15,8 @@ const MyEquipmentList = () => {
         }
     }, [user, loadedItems]);
 
+    
+
     return (
         <div>
             <nav className="w-11/12 mx-auto">
@@ -24,18 +26,18 @@ const MyEquipmentList = () => {
             <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-8 w-11/12 mx-auto">
                 {
                     items.map(item => (
-                        <div class="card bg-base-100 shadow-xl">
+                        <div key={item._id} className="card bg-base-100 shadow-xl">
                             <figure>
-                                <img src={item.photo} alt="Product Image" class="h-48 w-full object-cover" />
+                                <img src={item.photo} alt="Product Image" className="h-48 w-full object-cover" />
                             </figure>
-                            <div class="card-body">
-                                <h2 class="card-title text-xl font-semibold">Product Name: {item.item}</h2>
-                                <p class="text-lg font-medium text-gray-700">{item.price}</p>
-                                <div class="card-actions justify-end mt-4">
-                                    <Link to={`/update-user/${item._id}`}>
-                                        <button class="btn btn-primary btn-sm">Update</button>
+                            <div className="card-body">
+                                <h2 className="card-title text-xl font-semibold">Product Name: {item.item}</h2>
+                                <p className="text-lg font-medium text-gray-700">{item.price}</p>
+                                <div className="card-actions justify-end mt-4">
+                                    <Link to={`/update-product/${item._id}`}>
+                                        <button className="btn btn-primary btn-sm">Update</button>
                                     </Link>
-                                    <button class="btn btn-error btn-sm">Delete</button>
+                                    <button  className="btn btn-error btn-sm">Delete</button>
                                 </div>
                             </div>
                         </div>
