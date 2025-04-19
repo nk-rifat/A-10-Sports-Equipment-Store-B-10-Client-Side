@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import Navbar from "../Components/Navbar";
 import Swal from "sweetalert2";
+import Footer from "./Footer";
 
 const AddEquipment = () => {
 
@@ -55,7 +56,7 @@ const AddEquipment = () => {
             <nav>
                 <Navbar></Navbar>
             </nav>
-            <div className="max-w-5xl mx-auto p-10 bg-base-200 rounded-3xl shadow-xl">
+            <div className="max-w-5xl mx-auto p-10 bg-base-200 rounded-3xl shadow-xl mt-16">
                 <h2 className="text-4xl font-bold text-center text-primary mb-10 tracking-tight">Add a New Product</h2>
 
                 <form onSubmit={handleAddEquipment} className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -158,7 +159,9 @@ const AddEquipment = () => {
                 </form>
             </div>
 
-
+            <div className="mt-16">
+                <Footer></Footer>
+            </div>
         </div>
     );
 };

@@ -3,6 +3,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { Link, useLoaderData } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import Swal from "sweetalert2";
+import Footer from "./Footer";
 
 const MyEquipmentList = () => {
     const loadedProducts = useLoaderData();
@@ -92,6 +93,10 @@ const MyEquipmentList = () => {
                         </div>
                     ))}
                 </div>
+            </div>
+
+            <div className="mt-30">
+                <Footer></Footer>
             </div>
 
         </div>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Navbar from "../Components/Navbar";
+import Footer from "./Footer";
 
 const AllEquipment = () => {
     const loadedProducts = useLoaderData();
@@ -64,6 +65,10 @@ const AllEquipment = () => {
                         </tbody>
                     </table>
                 </div>
+            </div>
+
+            <div className="mt-16">
+                <Footer></Footer>
             </div>
         </div>
     );

@@ -1,5 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import Navbar from "../Components/Navbar";
+import Footer from "./Footer";
 
 const ViewDetails = () => {
     const loadedProducts = useLoaderData();
@@ -61,6 +62,10 @@ const ViewDetails = () => {
                         </button>
                     </div>
                 </div>
+            </div>
+
+            <div className="mt-10">
+                <Footer></Footer>
             </div>
         </div>
     );
