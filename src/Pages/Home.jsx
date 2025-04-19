@@ -10,7 +10,7 @@ const Home = () => {
     return (
         <div className="bg-gradient-to-br from-gray-100 to-white">
             <header>
-                <nav className="w-11/12 mx-auto">
+                <nav>
                     <Navbar></Navbar>
                 </nav>
 
