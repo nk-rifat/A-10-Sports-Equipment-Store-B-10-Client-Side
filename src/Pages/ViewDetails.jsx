@@ -20,7 +20,7 @@ const ViewDetails = () => {
                         <img
                             src={matchId.photo}
                             alt="Item Image"
-                            className="h-64 w-full object-cover transform hover:scale-105 transition-transform duration-300"
+                            className="h-64 w-full object-cover"
                         />
                     </figure>
 
