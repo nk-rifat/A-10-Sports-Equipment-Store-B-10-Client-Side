@@ -9,6 +9,7 @@ import Register from '../Pages/Register';
 import PrivateRoute from "./PrivateRoute";
 import ViewDetails from "../Pages/ViewDetails";
 import UpdateProduct from "../Pages/UpdateProduct";
+import AboutUs from "../Pages/AboutUs";
 
 const Router = createBrowserRouter([
     {
@@ -47,6 +48,10 @@ const Router = createBrowserRouter([
             <UpdateProduct></UpdateProduct>
         </PrivateRoute>,
         loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+    },
+    {
+        path: 'about-us',
+        element: <AboutUs></AboutUs>
     },
     {
         path: '/login',

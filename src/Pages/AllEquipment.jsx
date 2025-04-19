@@ -2,7 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 
 const AllEquipment = () => {
-    const loadedItems = useLoaderData();
+    const loadedProducts = useLoaderData();
     return (
         <div className="w-11/12 mx-auto">
             <nav>
@@ -21,13 +21,13 @@ const AllEquipment = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {loadedItems.map((item) => (
-                                <tr key={item._id}>
-                                    <td className="text-center">{item.item}</td>
-                                    <td className="text-center">{item.category}</td>
-                                    <td className="text-center">{item.price}</td>
+                            {loadedProducts.map((product) => (
+                                <tr key={product._id}>
+                                    <td className="text-center">{product.item}</td>
+                                    <td className="text-center">{product.category}</td>
+                                    <td className="text-center">{product.price}</td>
                                     <td className="text-center">
-                                        <Link to={`/view-details/${item._id}`}>
+                                        <Link to={`/view-details/${product._id}`}>
                                             <button className="btn btn-outline btn-primary font-bold hover:scale-105 transition-transform duration-300">
                                                 View Details
                                             </button>

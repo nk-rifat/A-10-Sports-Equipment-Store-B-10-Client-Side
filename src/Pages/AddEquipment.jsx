@@ -43,7 +43,7 @@ const AddEquipment = () => {
                     Swal.fire({
                         title: 'Success!',
                         icon: "Success!",
-                        text: "Coffee Added Successfully",
+                        text: "Product Added Successfully",
                         confirmButtonText: 'Close'
                     });
                 }
@@ -65,7 +65,7 @@ const AddEquipment = () => {
                         <label className="label">
                             <span className="text-sm text-black uppercase font-semibold">Image URL</span>
                         </label>
-                        <input type="text" name="photo" placeholder="PhotoURL" className="input input-bordered rounded-xl focus:outline-none focus:ring-2 focus:ring-primary w-full" />
+                        <input type="text" name="photo" required placeholder="PhotoURL" className="input input-bordered rounded-xl focus:outline-none focus:ring-2 focus:ring-primary w-full" />
                     </div>
 
                     {/* Item Name */}
@@ -73,7 +73,7 @@ const AddEquipment = () => {
                         <label className="label">
                             <span className="text-sm text-black uppercase font-semibold">Product Name</span>
                         </label>
-                        <input type="text" name="item" placeholder="Item Name" className="input input-bordered rounded-xl focus:outline-none focus:ring-2 focus:ring-primary w-full" />
+                        <input type="text" name="item" required placeholder="Item Name" className="input input-bordered rounded-xl focus:outline-none focus:ring-2 focus:ring-primary w-full" />
                     </div>
 
                     {/* Category */}
@@ -81,7 +81,7 @@ const AddEquipment = () => {
                         <label className="label">
                             <span className="text-sm text-black uppercase font-semibold">Category</span>
                         </label>
-                        <input type="text" name="category" placeholder="Category" className="input input-bordered rounded-xl focus:outline-none focus:ring-2 focus:ring-primary w-full" />
+                        <input type="text" name="category" required placeholder="Category" className="input input-bordered rounded-xl focus:outline-none focus:ring-2 focus:ring-primary w-full" />
                     </div>
 
                     {/* Price */}
@@ -89,7 +89,7 @@ const AddEquipment = () => {
                         <label className="label">
                             <span className="text-sm text-black uppercase font-semibold">Price (USD)</span>
                         </label>
-                        <input type="number" name="price" placeholder="Price" className="input input-bordered rounded-xl focus:outline-none focus:ring-2 focus:ring-primary w-full" />
+                        <input type="number" name="price" required placeholder="Price" className="input input-bordered rounded-xl focus:outline-none focus:ring-2 focus:ring-primary w-full" />
                     </div>
 
                     {/* Rating */}
@@ -97,7 +97,7 @@ const AddEquipment = () => {
                         <label className="label">
                             <span className="text-sm text-black uppercase font-semibold">Rating</span>
                         </label>
-                        <input type="number" name="rating" step="1" max="5" placeholder="Rating" className="input input-bordered rounded-xl focus:outline-none focus:ring-2 focus:ring-primary w-full" />
+                        <input type="number" name="rating" required step="1" max="5" placeholder="Rating" className="input input-bordered rounded-xl focus:outline-none focus:ring-2 focus:ring-primary w-full" />
                     </div>
 
                     {/* Customization */}
@@ -105,7 +105,7 @@ const AddEquipment = () => {
                         <label className="label">
                             <span className="text-sm text-black uppercase font-semibold">Customization Options</span>
                         </label>
-                        <input type="text" name="customization" placeholder="Details About Customization" className="input input-bordered rounded-xl focus:outline-none focus:ring-2 focus:ring-primary w-full" />
+                        <input type="text" name="customization" required placeholder="Details About Customization" className="input input-bordered rounded-xl focus:outline-none focus:ring-2 focus:ring-primary w-full" />
                     </div>
 
                     {/* Description */}
@@ -113,7 +113,7 @@ const AddEquipment = () => {
                         <label className="label">
                             <span className="text-sm text-black uppercase font-semibold">Product Description</span>
                         </label>
-                        <textarea className="textarea textarea-bordered rounded-xl focus:outline-none focus:ring-2 focus:ring-primary w-full" rows="2" name="description" placeholder="Provide a clear and concise description of the product..."></textarea>
+                        <textarea className="textarea textarea-bordered rounded-xl focus:outline-none focus:ring-2 focus:ring-primary w-full" rows="2" name="description" required placeholder="Provide a clear and concise description of the product..."></textarea>
                     </div>
 
                     {/* Processing Time */}
@@ -121,7 +121,7 @@ const AddEquipment = () => {
                         <label className="label">
                             <span className="text-sm text-black uppercase font-semibold">Processing Time</span>
                         </label>
-                        <input type="number" name="time" placeholder="Processing Time" className="input input-bordered rounded-xl focus:outline-none focus:ring-2 focus:ring-primary w-full" />
+                        <input type="number" name="time" required placeholder="Processing Time" className="input input-bordered rounded-xl focus:outline-none focus:ring-2 focus:ring-primary w-full" />
                     </div>
 
                     {/* Stock Quantity */}
@@ -129,7 +129,7 @@ const AddEquipment = () => {
                         <label className="label">
                             <span className="text-sm text-black uppercase font-semibold">Available Stock</span>
                         </label>
-                        <input type="number" name="stock" placeholder="Stock Quantity" className="input input-bordered rounded-xl focus:outline-none focus:ring-2 focus:ring-primary w-full" />
+                        <input type="number" name="stock" required placeholder="Stock Quantity" className="input input-bordered rounded-xl focus:outline-none focus:ring-2 focus:ring-primary w-full" />
                     </div>
 
                     {/* User Email (Read-only) */}

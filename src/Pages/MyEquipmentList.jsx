@@ -5,16 +5,16 @@ import Navbar from "../Components/Navbar";
 import Swal from "sweetalert2";
 
 const MyEquipmentList = () => {
-    const loadedItems = useLoaderData();
+    const loadedProducts = useLoaderData();
     const { user } = useContext(AuthContext);
-    const [items, setItems] = useState(loadedItems);
+    const [products, setProducts] = useState(loadedProducts);
 
     useEffect(() => {
-        if (user && loadedItems.length > 0) {
-            const loggedInUserItems = loadedItems.filter(item => item.email === user.email);
-            setItems(loggedInUserItems);
+        if (user && loadedProducts.length > 0) {
+            const loggedInUserProducts = loadedProducts.filter(product => product.email === user.email);
+            setProducts(loggedInUserProducts);
         }
-    }, [user, loadedItems]);
+    }, [user, loadedProducts]);
 
     const handleDeleteProduct = (id) => {
 
@@ -41,8 +41,8 @@ const MyEquipmentList = () => {
                                 text: "Your Product has been deleted.",
                                 icon: "success"
                             });
-                            const remaining = items.filter(item => item._id !== id);
-                            setItems(remaining);
+                            const remaining = products.filter(product => product._id !== id);
+                            setProducts(remaining);
                         }
                     })
             }
@@ -57,7 +57,7 @@ const MyEquipmentList = () => {
 
             <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-8 w-11/12 mx-auto">
                 {
-                    items.map(item => (
+                    products.map(item => (
                         <div key={item._id} className="card bg-base-100 shadow-xl">
                             <figure>
                                 <img src={item.photo} alt="Product Image" className="h-48 w-full object-cover" />

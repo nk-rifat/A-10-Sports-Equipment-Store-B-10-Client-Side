@@ -6,8 +6,8 @@ import Swal from "sweetalert2";
 
 const UpdateProduct = () => {
 
-    const loadedItems = useLoaderData();
-    const { category, customization, description, item, photo, price, rating, stock, time, _id } = loadedItems;
+    const loadedProducts = useLoaderData();
+    const { category, customization, description, item, photo, price, rating, stock, time, _id } = loadedProducts;
     const { user } = useContext(AuthContext);
 
     const handleUpdateProduct = (event) => {

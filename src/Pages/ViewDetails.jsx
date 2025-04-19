@@ -2,11 +2,10 @@ import { useLoaderData, useParams } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 
 const ViewDetails = () => {
-    const loadedItems = useLoaderData();
+    const loadedProducts = useLoaderData();
     const { id } = useParams();
 
-    const matchId = loadedItems.find(item => item._id === id);
-    console.log(matchId)
+    const matchId = loadedProducts.find(product => product._id === id);
     return (
         <div>
             <nav>
