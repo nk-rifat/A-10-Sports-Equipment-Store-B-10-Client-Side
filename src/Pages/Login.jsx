@@ -1,5 +1,5 @@
-import { useContext, useState } from "react";
-import { Link,useNavigate} from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link,useLocation,useNavigate} from "react-router-dom";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../Provider/AuthProvider";
@@ -7,6 +7,13 @@ import Navbar from "../Components/Navbar";
 import { toast } from "react-toastify";
 
 const Login = () => {
+    const location = useLocation();
+
+    // Set the title dynamically based on the route
+    useEffect(() => {
+        document.title = 'Login | Equip Zone';
+    }, [location]);
+
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
 

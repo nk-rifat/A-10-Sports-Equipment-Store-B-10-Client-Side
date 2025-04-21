@@ -1,13 +1,15 @@
 import { Medal, Truck, ShoppingCart, Star } from 'lucide-react';
 import Navbar from '../Components/Navbar';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const AboutUs = () => {
-    // const location = useLocation();
+    const location = useLocation();
 
-    // // Set the title dynamically based on the route
-    // useEffect(() => {
-    //     document.title = 'About-Us | Equip Zone';
-    // }, [location]);
+    // Set the title dynamically based on the route
+    useEffect(() => {
+        document.title = 'About-Us | Equip Zone';
+    }, [location]);
     return (
         <div>
             <nav>

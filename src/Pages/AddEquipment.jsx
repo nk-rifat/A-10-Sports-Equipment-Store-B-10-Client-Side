@@ -1,10 +1,17 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import Navbar from "../Components/Navbar";
 import Swal from "sweetalert2";
 import Footer from "./Footer";
+import { useLocation } from "react-router-dom";
 
 const AddEquipment = () => {
+    const location = useLocation();
+
+    // Set the title dynamically based on the route
+    useEffect(() => {
+        document.title = 'Add-Equipment | Equip Zone';
+    }, [location]);
 
     const { user } = useContext(AuthContext);
 
@@ -25,8 +32,6 @@ const AddEquipment = () => {
         const name = form.name.value;
 
         const newItem = { photo, item, category, price, rating, customization, description, time, stock, email, name };
-        console.log(newItem)
-
 
         //send data to server 
 
@@ -39,7 +44,6 @@ const AddEquipment = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 if (data.insertedId) {
                     Swal.fire({
                         title: 'Success!',

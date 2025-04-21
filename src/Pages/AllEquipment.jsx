@@ -1,9 +1,16 @@
-import { useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLoaderData, useLocation } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import Footer from "./Footer";
 
 const AllEquipment = () => {
+    const location = useLocation();
+
+    // Set the title dynamically based on the route
+    useEffect(() => {
+        document.title = 'All-Equipment | Equip Zone';
+    }, [location]);
+
     const loadedProducts = useLoaderData();
     const [sortOrder, setSortOrder] = useState('asc'); // Default sort order (ascending)
 

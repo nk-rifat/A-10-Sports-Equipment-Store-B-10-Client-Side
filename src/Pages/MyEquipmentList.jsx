@@ -1,11 +1,19 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useLocation } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import Swal from "sweetalert2";
 import Footer from "./Footer";
 
 const MyEquipmentList = () => {
+    const location = useLocation();
+
+    // Set the title dynamically based on the route
+    useEffect(() => {
+        document.title = 'My-Equipment | Equip Zone';
+    }, [location]);
+
+
     const loadedProducts = useLoaderData();
     const { user } = useContext(AuthContext);
     const [products, setProducts] = useState(loadedProducts);
@@ -35,7 +43,6 @@ const MyEquipmentList = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
                         if (data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",

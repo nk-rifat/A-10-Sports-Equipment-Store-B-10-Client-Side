@@ -1,10 +1,16 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import Navbar from "../Components/Navbar";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useLocation } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateProduct = () => {
+    const location = useLocation();
+
+    // Set the title dynamically based on the route
+    useEffect(() => {
+        document.title = 'Update-Product | Equip Zone';
+    }, [location]);
 
     const loadedProducts = useLoaderData();
     const { category, customization, description, item, photo, price, rating, stock, time, _id } = loadedProducts;
@@ -39,7 +45,6 @@ const UpdateProduct = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: 'Success!',

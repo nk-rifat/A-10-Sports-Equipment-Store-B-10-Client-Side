@@ -10,7 +10,7 @@ const ProductSection = () => {
             .then(data => {
                 setProducts(data);
             })
-    }, [])
+    }, []);
     return (
         <div className="mt-20">
             <div className="text-center">
@@ -50,8 +50,6 @@ const ProductSection = () => {
                     ))
                 }
             </div>
-
-
         </div>
     );
 };

@@ -1,10 +1,16 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { toast } from "react-toastify";
 
 const Register = () => {
+    const location = useLocation();
+
+    // Set the title dynamically based on the route
+    useEffect(() => {
+        document.title = 'Register | Equip Zone';
+    }, [location]);
 
     const { setUser, registerUser, updateUserProfile } = useContext(AuthContext);
     const [error, setError] = useState('');
@@ -29,7 +35,6 @@ const Register = () => {
         registerUser(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user)
                 updateUserProfile({ displayName: name, photoURL: photo })
                     .then(() => {
                     })

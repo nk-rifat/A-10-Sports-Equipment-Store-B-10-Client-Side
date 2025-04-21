@@ -1,8 +1,16 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useLocation, useParams } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import Footer from "./Footer";
+import { useEffect } from "react";
 
 const ViewDetails = () => {
+    const location = useLocation();
+
+    // Set the title dynamically based on the route
+    useEffect(() => {
+        document.title = 'View-Details | Equip Zone';
+    }, [location]);
+
     const loadedProducts = useLoaderData();
     const { id } = useParams();
 
