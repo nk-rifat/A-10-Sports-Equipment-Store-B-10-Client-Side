@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link} from "react-router-dom";
+import { Link,useNavigate} from "react-router-dom";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../Provider/AuthProvider";
@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate();
 
     const { loginUser, setUser, signInWithGoogle } = useContext(AuthContext);
     const [error, setError] = useState('');
@@ -23,6 +24,7 @@ const Login = () => {
                 const user = result.user;
                 toast.success('Login successful!');
                 setUser(user);
+                navigate('/');
                 e.target.reset();
             })
             .catch(error => {
@@ -36,6 +38,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 setUser(user);
+                navigate('/');
             })
             .catch(error => {
                 const err = error.message;

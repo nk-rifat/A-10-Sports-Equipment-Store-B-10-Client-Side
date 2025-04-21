@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
@@ -8,6 +8,7 @@ const Register = () => {
 
     const { setUser, registerUser, updateUserProfile } = useContext(AuthContext);
     const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     const handleRegister = e => {
         e.preventDefault();
@@ -34,6 +35,7 @@ const Register = () => {
                     })
                 toast.success('Registration successful!');
                 setUser(user);
+                navigate('/');
             })
             .catch(error => {
                 const err = error.message;
