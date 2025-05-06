@@ -38,7 +38,7 @@ const MyEquipmentList = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/product/${id}`, {
+                fetch(`https://equip-zone.vercel.app/product/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

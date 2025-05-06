@@ -5,7 +5,7 @@ const ProductSection = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/product/six')
+        fetch('https://equip-zone.vercel.app/product/six')
             .then(res => res.json())
             .then(data => {
                 setProducts(data);

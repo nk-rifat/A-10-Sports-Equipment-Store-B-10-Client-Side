@@ -20,7 +20,7 @@ const Router = createBrowserRouter([
     {
         path: '/all-equipment',
         element: <AllEquipment></AllEquipment>,
-        loader: () => fetch('http://localhost:5000/product')
+        loader: () => fetch('https://equip-zone.vercel.app/product')
     },
     {
         path: '/add-equipment',
@@ -33,21 +33,21 @@ const Router = createBrowserRouter([
         element: <PrivateRoute>
             <MyEquipmentList></MyEquipmentList>
         </PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/product')
+        loader: () => fetch('https://equip-zone.vercel.app/product')
     },
     {
         path: '/view-details/:id',
         element: <PrivateRoute>
             <ViewDetails></ViewDetails>
         </PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/product')
+        loader: ({params}) => fetch(`https://equip-zone.vercel.app/product/${params.id}`)
     },
     {
         path: '/update-product/:id',
         element: <PrivateRoute>
             <UpdateProduct></UpdateProduct>
         </PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+        loader: ({params}) => fetch(`https://equip-zone.vercel.app/product/${params.id}`)
     },
     {
         path: 'about-us',

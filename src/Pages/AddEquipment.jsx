@@ -35,7 +35,7 @@ const AddEquipment = () => {
 
         //send data to server 
 
-        fetch('http://localhost:5000/product', {
+        fetch('https://equip-zone.vercel.app/product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
