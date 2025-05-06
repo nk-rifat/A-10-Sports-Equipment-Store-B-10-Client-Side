@@ -11,7 +11,7 @@ const ViewDetails = () => {
         document.title = 'View-Details | Equip Zone';
     }, [location]);
 
-    const {photo,category,item, description, price, rating, customization, time, stock,    } = useLoaderData();
+    const {photo,category,item, description, price, rating, customization, time, stock} = useLoaderData();
 
     return (
         <div className="bg-gradient-to-br from-gray-100 to-white min-h-screen">
